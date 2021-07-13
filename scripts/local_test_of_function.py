@@ -38,10 +38,10 @@ This file will be written to the working directory.
 
 from customumme.functions import VoltageNEW
 
-fn = VoltageNEW(
+fn = Volt(
     input_items = ['current'],
     resistance='2',
-    output_items = ['voltage_calculated']
+    output_items = ['voltage']
               )
 df = fn.execute_local_test(db=db, db_schema=db_schema, generate_days=1, to_csv=True)
 print(df)
@@ -49,4 +49,4 @@ print(df)
 '''
 # Register function so that you can see it in the UI'''
 
-db.register_functions([VoltageNEW])
+db.unregister_functions([Volt])

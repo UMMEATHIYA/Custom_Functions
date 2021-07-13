@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 PACKAGE_URL = 'git@github.com:UMMEATHIYA/Custom_Functions.git'
 
 
-class VoltageNEW(BaseTransformer):
+class Volt(BaseTransformer):
 
     def __init__(self, input_items, resistance, output_items):
         self.input_items = input_items
