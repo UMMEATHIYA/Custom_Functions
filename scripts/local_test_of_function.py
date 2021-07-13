@@ -36,13 +36,17 @@ This file will be written to the working directory.
 
 '''
 
-from custom.functions import HelloWorld
+from customumme.functions import VoltageCalculator
 
-fn = HelloWorld(name='AS_Tester', greeting_col='greeting')
-fn.execute_local_test(db=db, db_schema=db_schema)
+fn = VoltageCalculator(
+    input_items = ['current'],
+    resistance='2',
+    output_items = ['voltage_calculated']
+              )
+df = fn.execute_local_test(db=db, db_schema=db_schema, generate_days=1, to_csv=True)
+print(df)
 
 '''
-Register function so that you can see it in the UI
-'''
+# Register function so that you can see it in the UI'''
 
-db.register_functions([HelloWorld])
+#db.register_functions([VoltageCalculator])
