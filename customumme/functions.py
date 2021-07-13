@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 PACKAGE_URL = 'git@github.com:UMMEATHIYA/Custom_Functions.git'
 
 
-class VoltageCalculator(BaseTransformer):
+class VoltageNEW(BaseTransformer):
 
     def __init__(self, input_items, resistance, output_items):
         self.input_items = input_items
@@ -21,10 +21,10 @@ class VoltageCalculator(BaseTransformer):
 
     def execute(self, df):
         df = df.copy()
-        print('Before:',df)
+        #print('Before:',df)
         for i, input_item in enumerate(self.input_items):
             df[self.output_items[i]] = df[input_item] * self.resistance
-        print('After',df)
+        #print('After',df)
         return df
 
     @classmethod

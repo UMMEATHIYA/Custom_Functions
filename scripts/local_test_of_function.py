@@ -36,9 +36,9 @@ This file will be written to the working directory.
 
 '''
 
-from customumme.functions import VoltageCalculator
+from customumme.functions import VoltageNEW
 
-fn = VoltageCalculator(
+fn = VoltageNEW(
     input_items = ['current'],
     resistance='2',
     output_items = ['voltage_calculated']
@@ -49,4 +49,4 @@ print(df)
 '''
 # Register function so that you can see it in the UI'''
 
-#db.register_functions([VoltageCalculator])
+db.register_functions([VoltageNEW])
